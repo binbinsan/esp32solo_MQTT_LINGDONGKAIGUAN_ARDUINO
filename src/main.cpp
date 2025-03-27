@@ -242,6 +242,7 @@ void reconnectMQTT() {
      delay(500);
      if (digitalRead(atoi(button_pin)) == HIGH) {
        digitalWrite(atoi(power_pin), LOW); // 关闭电源
+       esp_deep_sleep_start(); // 进入深度休眠
      } 
    }
  }
